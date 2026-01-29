@@ -20,17 +20,17 @@ async function scrapeWebsite(url, res) {
 
     let browser;
     try {
-       // Launch puppeteer
-    browser = await puppeteer.launch({
-      headless: 'new',
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH, 
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--single-process' 
-      ]
-    });
+     // Launch puppeteer
+        browser = await puppeteer.launch({
+            headless: 'new',
+            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--single-process'
+            ]
+        });
 
         const page = await browser.newPage();
 
@@ -133,4 +133,5 @@ function downloadImage(url) {
 }
 
 module.exports = { scrapeWebsite };
+
 
