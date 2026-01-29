@@ -1,16 +1,5 @@
-# Nixpacks configuration
 [phases.setup]
-nixPkgs = [
-    "nodejs",
-    "npm", 
-    "chromium", 
-    "glib", 
-    "nss", 
-    "freetype", 
-    "harfbuzz", 
-    "ca-certificates", 
-    "ttf-freefont"
-]
+nixPkgs = ["nodejs", "npm", "chromium"]
 [phases.build]
 cmds = ["npm install", "npm run build"]
 [start]
