@@ -1,8 +1,17 @@
+# Nixpacks configuration
 [phases.setup]
-nixPkgs = ["...", "chromium", "nss", "freetype", "freetype.dev", "expat"]
-
+nixPkgs = [
+    "nodejs",
+    "npm", 
+    "chromium", 
+    "glib", 
+    "nss", 
+    "freetype", 
+    "harfbuzz", 
+    "ca-certificates", 
+    "ttf-freefont"
+]
 [phases.build]
 cmds = ["npm install", "npm run build"]
-
 [start]
-cmd = "npm start"
+cmd = "PUPPETEER_EXECUTABLE_PATH=$(which chromium) npm start"
